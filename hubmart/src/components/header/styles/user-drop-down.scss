@@ -1,0 +1,76 @@
+.user-drop-down-menu{
+    position: absolute;
+    width: 160px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #f15a22;
+    border-left: 1px solid #afadad;
+    border-right: 1px solid #afadad;
+    border-bottom: 1px solid #afadad;
+    background-color: white;
+    top: 156px;
+    right: 260px;
+    z-index: 5;
+}
+.sticky  .user-drop-down-menu{
+    position: absolute;
+    width: 160px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #f15a22;
+    border-left: 1px solid #afadad;
+    border-right: 1px solid #afadad;
+    border-bottom: 1px solid #afadad;
+    background-color: white;
+    top: 80px;
+    right: 260px;
+    z-index: 5;
+}
+.user-drop-down-login-signin{
+    position: absolute;
+    width: 135px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-top: 1px solid #f15a22;
+    border-left: 1px solid #afadad;
+    border-right: 1px solid #afadad;
+    border-bottom: 1px solid #afadad;
+    background-color: white;
+    top: 130px;
+    right: 260px;
+    z-index: 5;
+
+    .signin_qus{
+font-size: 13px;
+    }
+button{
+    border-radius: 10px;
+    outline: none;
+    border: #f15a22 solid 1px;
+    padding: 5px;
+    background-color: #f15a22;
+    color: #ffffff;
+}
+}
+.sticky .user-drop-down-login-signin{
+    position: absolute;
+    width: 135px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-top: 1px solid #f15a22;
+    border-left: 1px solid #afadad;
+    border-right: 1px solid #afadad;
+    border-bottom: 1px solid #afadad;
+    background-color: white;
+    top: 80px;
+    right: 260px;
+    z-index: 5;
+}

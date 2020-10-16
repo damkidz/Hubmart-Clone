@@ -1,0 +1,46 @@
+.nav{
+    background-color: #F15A22;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(5px + 2vmin);
+    color: rgb(255, 255, 255);
+    height: 50px;
+    
+}
+.nav-url{
+    padding-left: 7.2rem;
+    cursor: pointer;
+
+}
+.nav2-url{
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+.seprator{
+    border-left: .1px solid rgb(75, 74, 74);
+    height: 50px;
+    margin-left: 10px;
+    top: 0;
+  }
+  @media only screen and (max-width: 657px) {
+      .nav {
+          display: none;
+      }
+  }
+@media only screen and (max-width:768px) {
+    .nav {
+        display: none;
+    }
+}
+@media only screen and (max-width:992px) {
+  .nav {
+      display: none;
+  }
+}
+@media only screen and (max-width:1200px) {
+  .nav {
+      display: none;
+  }
+} 

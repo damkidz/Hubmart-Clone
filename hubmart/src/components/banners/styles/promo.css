@@ -1,0 +1,58 @@
+.row {
+    display: flex;
+    padding: 0 4px;
+    justify-content: center;
+    height: 100%;
+    margin-top: 28px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .column img {
+    width: 100%;
+    border: .5rem white solid;
+    height: 80%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 657px) {
+    .row {
+      display: block;
+      width: 80%;
+      margin: auto;
+      margin-top: 15px;
+      border: 2px solid black;
+    }
+  }
+  
+  @media screen and (max-width: 786px) {
+    .row {
+      display: block;
+      width: 80%;
+      margin: auto;
+      margin-top: 25px;
+    }
+  }
+  @media screen and (max-width:992px) {
+    .row {
+      display: block;
+      margin: auto;
+      margin-top: 25px;
+    }
+  }
+  @media screen and (max-width:1200px) {
+    .row {
+      display: block;
+      margin: auto;
+      width: 80%;
+      margin-top: 25px;
+    }
+  }
+  @media screen and (max-width:1300px) {
+    .row {
+      display: flex;
+      margin: auto;
+      width: 85%;
+      margin-top: 25px;
+    }
+  }

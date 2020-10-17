@@ -8,7 +8,7 @@ import Billing from "./Billing";
 import Shipping from "./Shipping";
 import AccountView from "./AccountView";
 import MyAccount from "./MyAccount";
-import MainApp from "../main/MainApp";
+import MainApp from "../main/Home";
 import Download from "./Download";
 import PaymentDetails from "./PaymentDetails";
 import Address from "./Address";

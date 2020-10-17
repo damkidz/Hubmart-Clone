@@ -8,7 +8,7 @@ import allProductReducer from './productReducer/reducer';
 import headerReducer from './headerReducer/reducer'
 
 const rootReducer = combineReducers({
-    forms: formReducer,
+    form: formReducer,
     authReducer,
     headerReducer,
     allProductReducer,

@@ -5,7 +5,7 @@ import {stopSubmit} from 'redux-form'
 
 export const tokenConfig = getState => {
     // get token from state
-    const token = getState().authUser.token;
+    const token = getState().authReducer.token;
 
     // header config
     const config = {
@@ -48,8 +48,8 @@ export const loginUser = ({username, password}) => async dispatch =>{
           payload: res.data
         });
       } catch (error) {
-        dispatch({type:authActions.LOGIN_FAIL});
-        dispatch(stopSubmit('loginSignupForm', error.message));
+        dispatch({type:authActions.LOGIN_FAIL, payload:error.response.data});
+        dispatch(stopSubmit('loginSignupForm', error.response.data));
       }
     };
 

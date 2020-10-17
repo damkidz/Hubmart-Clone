@@ -9,7 +9,7 @@ import FeaturedProducts from '../mainbody/FeaturedProducts';
 // bodyScroll.disable()
 // bodyScroll.enable()
 
-export default function MainApp() {
+export default function HomePage() {
     return (
         <>
             <Banner />

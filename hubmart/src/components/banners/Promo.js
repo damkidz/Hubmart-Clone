@@ -10,17 +10,18 @@ export default function Promo() {
     return (
       <div className='promo'>
         <div className='first-div-promo'>
-            <img src={voucher1} alt='v1' width="100%"/>
-            <img src={voucher2} alt='v2'width="100%" height="300px"/>
-
+            <img src={voucher1} alt='v1'/>
+            <img src={voucher2} alt='v2'/>
          </div>
         <div className='second-div-promo'>
             <div className='first-div'>
-            <img src={voucher3} alt='v1'width="60%"/>
-            <img src={voucher4} alt='v1'width="60%"/>
+            <div className='voucher3'>
+            <img src={voucher3} alt='v1'/>
             </div>
-                <img src={voucher1} alt='v1'width="700px" height="300px"/>
-                <img src={voucher1} alt='v1'width="700px" height="300px"/>
+            <img src={voucher4} alt='v1'/>
+            </div>
+                <img src={voucher1} alt='v1'/>
+                <img src={voucher1} alt='v1'/>
 
         </div>
       </div>

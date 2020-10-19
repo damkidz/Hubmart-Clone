@@ -20,8 +20,8 @@ export default function Promo() {
             </div>
             <img src={voucher4} alt='v1'/>
             </div>
-                <img src={voucher1} alt='v1'/>
-                <img src={voucher1} alt='v1'/>
+                <img src={voucher3} alt='v1'/>
+                <img src={voucher5} alt='v1'/>
 
         </div>
       </div>

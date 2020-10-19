@@ -1,18 +1,27 @@
 
+  .promo{
     display: flex;
-    padding: 0 4px;
-    justify-content: center;
-    height: 100%;
-    margin-top: 28px;
-    margin-left: 100px;
-    margin-right: 100px;
+    .first-div-promo{
+      display: block;
+      .v1{
+
+      }
+      .v2{
+
+      }
+    }
+    .second-div-promo{
+      display: block;
+      .first-div{
+        display: flex;
+      }
+      .sec-div{
+        display: block;
+      }
+    }
   }
   
-  .column img {
-    width: 100%;
-    border: .5rem white solid;
-    height: 80%;
-
+ 
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 657px) {
     .row {

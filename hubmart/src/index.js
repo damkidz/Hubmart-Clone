@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import 'react-notifications/lib/notifications.css';
+// import 'react-notifications/lib/notifications.css';
 import App from './App';
 
 

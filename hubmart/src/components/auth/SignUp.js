@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { loginUser } from '../../actions/auth/actions';
 import { authUserSelector , showMessageSelector, alertMessageSelector} from '../../reducers/authReducer/selector';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+// import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 const validate = (values) => {
   const errors = {};
@@ -88,12 +88,12 @@ const mapStateToProps = state => ({
   alertMessage: alertMessageSelector(state),
 });
 
-Form = connect(
+SignupForm = connect(
   mapStateToProps,
   {loginUser}
 )(SignupForm);
 
 export default reduxForm({
-  form: 'SignupForm',
+  SignupForm: 'SignupForm',
   validate,
-})(Form);
+})(SignupForm);

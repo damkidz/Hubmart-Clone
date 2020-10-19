@@ -31,37 +31,11 @@ const dispatch = useDispatch();
     //  
    })
  },[])
-    // const productItems = allProducts.filter((product, idx)=> idx < 4)
-    // .map(product => {
-    //   return (
-    //     <ul key={product.id} className='product_list_items'>
-    //       <li >
-    //         <div className="card">
-    //           <p className="product-type"> Hubdeli</p>
-    //           <img src={product.image} alt="hubmat-img" />
-    //           <Link to={`/products/${product.id}/${product.name}`}>{product.name}</Link>
-    //           <p className="title">₦{product.price}</p>
-    //           <div className="input">
-    //             <input className="qty" placeholder="1" />
-    //             <button className="plus">+</button>
-    //             <button className="minus">-</button>
-    //           </div>
-    //           <button className="add-to-cart" onClick={() => addCartItems(product)}>
-    //             Add to cart
-    //           </button>
-    //           <div className="wish-list">
-    //             <p>Add to Wishlist</p>
-    //             <p>Compare</p>
-    //           </div>
-    //         </div>
-    //       </li>
-    //     </ul>
-    //   );
-    // });
+ 
     return (
       <>
         <div className="menuProducts">
-          <SideMenu />
+        
           <div className="tab">
             <button
               className="tablinks active"

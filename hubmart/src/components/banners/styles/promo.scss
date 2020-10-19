@@ -1,4 +1,4 @@
-.row {
+/* .row {
     display: flex;
     padding: 0 4px;
     justify-content: center;
@@ -12,8 +12,26 @@
     width: 100%;
     border: .5rem white solid;
     height: 80%;
+  } */
+  .promo{
+    display:flex;
+    max-width:80%;
+    margin-left:50px;
+  .first-div-promo{
+  display: block;
+  max-width:60%;
+   margin-left:50px;
   }
-  
+  .second-div-promo {
+  display: block;
+  margin-left:20px;
+    .first-div{
+      margin-left:20px; 
+      display:flex;
+    }
+  }
+  }
+
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 657px) {
     .row {

@@ -1,9 +1,5 @@
 import React from 'react'
-import voucher1 from '../../assets/images/hubdeli_feature1.jpg'
-import voucher2 from '../../assets/images/bakery_feature.jpg'
-import voucher3 from '../../assets/images/skincare_feature-2.jpg'
-import voucher4 from '../../assets/images/produce_feature-1.jpg'
-import voucher5 from '../../assets/images/homeoffice_feature.jpg'
+
 import './styles/promo.scss';
 
 export default function Promo() {

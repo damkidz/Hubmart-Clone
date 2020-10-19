@@ -1,0 +1,146 @@
+.layout-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  max-width: auto;
+  max-height: 60vh;
+  .login-container {
+    .auth-title{
+      font-size: large;
+      text-align: center;
+    }
+    width: 40vw;
+    margin: 40px 20px 0 100px;
+    max-height: 50vh;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-sizing: border-box;
+    box-shadow: rgba(89, 89, 89, 0.35) 0px 5px 15px 0px;
+    padding: 20px;
+    .login-btn{
+      width: 10vw;
+      height: 30px;
+      float: right;
+      margin: 10px 40px;
+      font-size: medium;
+      background-color: #f15a22;
+      color: white;
+      outline: none;
+      cursor: pointer;
+      border: none;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+     }
+    .login-renderfield-layout {
+      width: 35vw;
+      margin: 20px 20px 0 20px;
+  
+
+      .login-renderfield {
+        width: 33vw;
+        .login-renderfield-input {
+          width: 33vw;
+          height: 40px;
+          outline: none;
+          border: 2px solid rgb(230, 230, 230);
+          border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+        }
+        .login-renderfield-error {
+          color: red;
+        }
+      }
+    
+    }
+          .renderfield-error {
+            color: red;
+            width: 33vw;
+            font-size: 15px;
+            margin-left: 20px;
+            font-weight: 500;
+          }
+  }
+  .signup-container {
+    .auth-title{
+      font-size: large;
+      text-align: center;
+    }
+    width: 40vw;
+    margin: 40px 80px 0 30px;
+    max-height: 60vh;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-sizing: border-box;
+    box-shadow: rgba(89, 89, 89, 0.35) 0px 5px 15px 0px;
+    padding: 20px;
+    .signup-btn{
+      width: 10vw;
+      height: 30px;
+      float: right;
+      margin: 10px 40px;
+      font-size: medium;
+      background-color: #f15a22;
+      color: white;
+      outline: none;
+      cursor: pointer;
+      border: none;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .signin-renderfield-layout {
+      width: 35vw;
+      margin: 20px 20px 0 20px;
+      
+
+      .signin-renderfield {
+        width: 33vw;
+        .signin-renderfield-input {
+          width: 33vw;
+          height: 40px;
+          outline: none;
+          border: 2px solid rgb(230, 230, 230);
+          border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+        }
+        .signin-renderfield-error {
+          color: red;
+        }
+      }
+    }
+  }
+  .text{
+     margin: 1rem 0 0 1rem;
+  }
+  .seprator1{
+    border-left: 2px solid #f15a22;
+    height: 30vh;
+    margin-left: 10px;
+    top: 0;
+  }
+  .seprator2{
+    border-left: 2px solid #f15a22;
+    height: 40vh;
+    margin-left: 10px;
+    top: 0;
+  }
+  .or{
+    border-radius: 50%;
+    border: #f15a22 2px solid;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+  }
+}

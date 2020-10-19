@@ -4,20 +4,19 @@ import { Link, withRouter } from "react-router-dom";
  function MyAccount({ currentUser,logout,history }) {
   const { user } = currentUser;
   return (
+    <>
     <div>
-      <p>
-        {" "}
-        Hello {user.username} (not {user.username}?{" "}
-        <Link
-          style={{ textDecoration: "none", color: "#00aeff" }}
-          onClick={() => {
-            logout();
+      <p
+        
+        style={{ textDecoration: "none", color: "#00aeff" }}
+        onClick={() => {
+          logout();
             history.push("/");
           }}
-        >
+          >
+          Hello {user.username} not {user.username}?{" "}
           Logout
-        </Link>
-        )
+       
       </p>
       <p>
         From your account dashboard you can view your{" "}
@@ -34,6 +33,7 @@ import { Link, withRouter } from "react-router-dom";
         </Link>
       </p>
     </div>
+    </>
   );
 }
 

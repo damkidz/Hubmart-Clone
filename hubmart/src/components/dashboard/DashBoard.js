@@ -8,7 +8,7 @@ import Billing from "./Billing";
 import Shipping from "./Shipping";
 import AccountView from "./AccountView";
 import MyAccount from "./MyAccount";
-import MainApp from "../main/MainApp";
+import MainApp from "../main/Home";
 import Download from "./Download";
 import PaymentDetails from "./PaymentDetails";
 import Address from "./Address";
@@ -73,7 +73,7 @@ function DashBoard({ match, currentUser, logout, history }) {
               <li>
                 <NavLink
                   style={{ textDecoration: "none", color: "#000000" }}
-                  to={`${match.url}/address`}
+                  to={`${match.path}/address`}
                   activeStyle={{ textDecoration: "none", color: "#F15A22", marginLeft: "-1rem" }}
                 >
                   Addresses
@@ -106,11 +106,7 @@ function DashBoard({ match, currentUser, logout, history }) {
                   </span>
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  style={{ textDecoration: "none", color: "#000000" }}
-                  to={`${match.url}/logout`}
-                  activeStyle={{ textDecoration: "none", color: "#F15A22", marginLeft: "-1rem" }}
+              <li
                   onClick={() => {
                     logout();
                     history.push("/");
@@ -120,7 +116,7 @@ function DashBoard({ match, currentUser, logout, history }) {
                   <span style={{ float: "right" }}>
                     <FontAwesomeIcon icon="sign-out-alt" />
                   </span>
-                </NavLink>
+                
               </li>
             </ul>
           </div>

@@ -6,20 +6,22 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT_SUCCESS,
+  SHOW_MESSAGE
 } from "../../actions/auth/types";
 
 const INITIAL_STATE = {
-  token:{},
+  token: localStorage.getItem("token"),
   isAuthenticated: null,
   currentUser: null,
   isLoading: false,
-  error: {},
-  initURL: "",
+  errors: {},
+  alertMessage: "",
+  showMessage: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
-
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case USER_LOADING:
       return {
         ...state,
@@ -29,18 +31,18 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        currentUser: action.payload,
+        currentUser: payload,
       };
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_SUCCESS:
-      localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("token", payload.token);
       return {
         ...state,
-        ...action.payload,
+        ...payload,
         isAuthenticated: true,
         isLoading: false,
-        currentUser: action.payload,
+        currentUser: payload,
       };
     case LOGIN_FAIL:
       localStorage.removeItem("token");
@@ -50,6 +52,7 @@ export default (state = INITIAL_STATE, action) => {
         isAuthenticated: false,
         currentUser: null,
         token: null,
+        error: payload,
       };
     case LOGOUT_SUCCESS:
       localStorage.clear();
@@ -59,7 +62,11 @@ export default (state = INITIAL_STATE, action) => {
         isAuthenticated: false,
         isLoading: false,
         currentUser: null,
+        showMessage: true,
+        alertMessage: 'You have logged out'
       };
+    case SHOW_MESSAGE:
+      return { ...state, alertMessage: payload, showMessage: true, isLoading: false };
     default:
       return state || INITIAL_STATE;
   }

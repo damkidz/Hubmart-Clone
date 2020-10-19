@@ -28,7 +28,7 @@ const CartDropDown = ({ cartItems, removeCartItems,toggleCartHidden, history }) 
               toggleCartHidden();
             }}
           >
-            Go Check Out
+            View Cart
           </button>
         </>
       ) : (

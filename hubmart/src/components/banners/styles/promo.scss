@@ -1,4 +1,4 @@
-.row {
+
     display: flex;
     padding: 0 4px;
     justify-content: center;
@@ -12,8 +12,7 @@
     width: 100%;
     border: .5rem white solid;
     height: 80%;
-  }
-  
+
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 657px) {
     .row {

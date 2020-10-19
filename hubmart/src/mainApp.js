@@ -34,7 +34,7 @@ import HomePage from "./components/main/Home";
 import Layout from "./components/main/Layout";
 import ProductDetail from "./components/mainbody/ProductDetail";
 import DashBoard from "./components/dashboard/DashBoard";
-import LoginForm from "./components/auth/Login";
+import AuthLayout from "./components/auth/AuthLayout";
 import TrackOrders from "./components/mainbody/TrackOrders";
 import ViewCartPage from "./components/dashboard/ViewCartPage";
 import PrivateRoute from "./components/main/PrivateRoute";
@@ -84,7 +84,7 @@ class mainApp extends Component {
                <Route
                  path="/login-signup"
                  render={() =>
-                   this.props.currentUser ? <Redirect to="/my-account" /> : <LoginForm />
+                   this.props.currentUser ? <Redirect to="/my-account" /> : <AuthLayout/>
                  }
                />
              </div>

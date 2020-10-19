@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fade } from 'react-slideshow-image';
-import './styles/banner.css';
+import './styles/banner.scss';
 import winepic from '../../assets/images/winepic.png';
 import wine from '../../assets/images/wine.png';
 import groceries from '../../assets/images/groceries.png';

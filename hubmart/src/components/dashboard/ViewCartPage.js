@@ -38,6 +38,7 @@ export const ViewCartPage = ({cartItems, subtotal}) => {
       <div className='total'>
         <span>Subtotal: {formatter.format(subtotal)} </span>
       </div>
+      {cartItems.length >= 1 ? <button className='checkout-btn'>Procced To CheckOut</button> : null}
     </div>
   );
 };

@@ -18,26 +18,27 @@ const validate = (values) => {
 };
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
-  return (
-    <div className='login-renderfield-layout'>
-    <label>{label}</label>
-    <div className='login-renderfield'>
-      <input {...input}  type={type}  className='login-renderfield-input'/>
-      {touched && error && <span className='login-renderfield-error'>{error}</span>}
+    return (
+      <div className='signin-renderfield-layout'>
+      <label>{label}</label>
+      <div className='signin-renderfield'>
+        <input {...input}  type={type}  className='signin-renderfield-input'/>
+        {touched && error && <p className='signin-renderfield-error'>{error}</p>}
+      </div>
     </div>
-  </div>
-  );
-};
+    );
+  };
 
-const hiddenField = ({ type, meta: { error } }) => {
-  return (
-    <div>
-      <input type={type}  />
-      {error && <div >{error}</div>}
-    </div>
-  );
-};
-function LoginForm(props){
+
+  const hiddenField = ({ type, meta: { error } }) => {
+    return (
+      <div className='hiddenfield-layout'>
+        <input type={type}  className='hiddenfield-input'/>
+        {error && <div className='hiddenfield-error'>{error}</div>}
+      </div>
+    );
+  };
+function SignupForm(props){
 
   const onSubmit = formValues => {
     props.loginUser(formValues);
@@ -50,33 +51,33 @@ function LoginForm(props){
 const { pristine, reset, submitting, alertMessage, showMessage} = props
 
     return (
-      <div className='login-container'>
-        <p className='auth-title'>Login</p>
+      <div className='signup-container'>
+        <p className='auth-title'>Register</p>
           <form
             onSubmit={props.handleSubmit(onSubmit)}
-            className='login-form'
+            className='signup-form'
           >
             <Field
               name='username'
               type='text'
               component={renderField}
-              label='Username'
+              label='Email'
             />
             <Field
-              name='password'
-              type='password'
-              component={renderField}
-              label='Password'
+              name='non_field_errors'
+              type='hidden'
+              component={hiddenField}
             />
-            <button  className='login-btn' disabled={pristine || submitting}>Login</button>
            
+            <button className='signup-btn'  disabled={pristine || submitting}>Register</button>
           </form>
           <div>
             {showMessage && <div className='renderfield-error'>{alertMessage}</div>}
             </div>
           <p className="text">
-            Don't have an account? <Link to='/login-signup'>Register</Link>
+            Don you have an account? <Link to='/login-signup'>Login</Link>
           </p>
+        
       </div>
     );
 }
@@ -87,12 +88,12 @@ const mapStateToProps = state => ({
   alertMessage: alertMessageSelector(state),
 });
 
-LoginForm = connect(
+Form = connect(
   mapStateToProps,
   {loginUser}
-)(LoginForm);
+)(SignupForm);
 
 export default reduxForm({
-  form: 'loginForm',
+  form: 'SignupForm',
   validate,
-})(LoginForm);
+})(Form);

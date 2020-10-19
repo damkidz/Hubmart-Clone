@@ -6,19 +6,21 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT_SUCCESS,
+  SHOW_MESSAGE
 } from "../../actions/auth/types";
 
 const INITIAL_STATE = {
-  token:localStorage.getItem("token"),
+  token: localStorage.getItem("token"),
   isAuthenticated: null,
   currentUser: null,
   isLoading: false,
-  error: [],
-  initURL: "",
+  errors: {},
+  alertMessage: "",
+  showMessage: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
-const {type, payload} = action;
+  const { type, payload } = action;
   switch (type) {
     case USER_LOADING:
       return {
@@ -60,7 +62,11 @@ const {type, payload} = action;
         isAuthenticated: false,
         isLoading: false,
         currentUser: null,
+        showMessage: true,
+        alertMessage: 'You have logged out'
       };
+    case SHOW_MESSAGE:
+      return { ...state, alertMessage: payload, showMessage: true, isLoading: false };
     default:
       return state || INITIAL_STATE;
   }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { loginUser } from '../../actions/auth/actions';
 import { authUserSelector , showMessageSelector, alertMessageSelector} from '../../reducers/authReducer/selector';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+// import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 const validate = (values) => {
   const errors = {};

@@ -2,6 +2,7 @@ import {
   USER_LOADING,
   USER_LOADED_SUCCESS,
   AUTH_ERROR,
+  REGISTER_SUCCESS,
   REGISTER_FAIL,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -9,65 +10,59 @@ import {
   SHOW_MESSAGE
 } from "../../actions/auth/types";
 
-const INITIAL_STATE = {
-  token: localStorage.getItem("token"),
+const initialState = {
+  token: localStorage.getItem('token'),
   isAuthenticated: null,
-  currentUser: null,
   isLoading: false,
+  currentUser: null,
   errors: {},
   alertMessage: "",
   showMessage: false,
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default (state=initialState, action) => {
   const { type, payload } = action;
+
   switch (type) {
     case USER_LOADING:
       return {
         ...state,
-        isLoading: true,
+        isLoading: true
       };
+
     case USER_LOADED_SUCCESS:
       return {
         ...state,
+        isAuthenticated: true,
         isLoading: false,
-        currentUser: payload,
+        currentUser: payload
       };
-    case REGISTER_FAIL:
-    case AUTH_ERROR:
+
+    case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
-      localStorage.setItem("token", payload.token);
+      localStorage.setItem('token', payload.token)
       return {
         ...state,
         ...payload,
         isAuthenticated: true,
         isLoading: false,
-        currentUser: payload,
       };
+
+    case REGISTER_FAIL:
     case LOGIN_FAIL:
-      localStorage.removeItem("token");
-      return {
-        ...state,
-        isLoading: false,
-        isAuthenticated: false,
-        currentUser: null,
-        token: null,
-        error: payload,
-      };
+    case AUTH_ERROR:
     case LOGOUT_SUCCESS:
-      localStorage.clear();
+      localStorage.removeItem('token')
       return {
         ...state,
         token: null,
         isAuthenticated: false,
         isLoading: false,
-        currentUser: null,
-        showMessage: true,
-        alertMessage: 'You have logged out'
+        currentUser: null
       };
-    case SHOW_MESSAGE:
-      return { ...state, alertMessage: payload, showMessage: true, isLoading: false };
+      case SHOW_MESSAGE:
+        return { ...state, alertMessage: payload, showMessage: true, isLoading: false };
     default:
-      return state || INITIAL_STATE;
+      return state;
   }
 };

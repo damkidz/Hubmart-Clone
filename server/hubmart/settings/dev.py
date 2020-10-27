@@ -10,7 +10,7 @@ WSGI_APPLICATION = 'hubmart.wsgi.dev.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'hubclone.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'hubdb.sqlite3'),
     }
 }
 

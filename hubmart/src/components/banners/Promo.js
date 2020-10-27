@@ -5,8 +5,9 @@ import voucher3 from "../../assets/images/skincare_feature-2.jpg";
 import voucher4 from "../../assets/images/produce_feature-1.jpg";
 import voucher5 from "../../assets/images/homeoffice_feature.jpg";
 import "./styles/promo.scss";
+import { withRouter } from "react-router-dom";
 
-export default function Promo() {
+const Promo = (history) => {
   return (
     <div className="promo">
       <div className="first-div-promo">
@@ -15,18 +16,15 @@ export default function Promo() {
       </div>
       <div className="second-div-promo">
         <div className="first-div">
-          <div>
-            <img src={voucher3} alt="v1" />
-          </div>
-          <div>
-            <img src={voucher4} alt="v1" />
-          </div>
+            <img src={voucher2} alt="v1"className="v3"/>
+            <img src={voucher3} alt="v1"className="v4" />
         </div>
         <div className='sec-div'>
-          <img src={voucher3} alt="v1" />
-          <img src={voucher5} alt="v1" />
+          <img src={voucher4} alt="v1" className="v5"/>
+          <img src={voucher5} alt="v1" className="v6" />
         </div>
       </div>
     </div>
   );
 }
+export default withRouter(Promo)

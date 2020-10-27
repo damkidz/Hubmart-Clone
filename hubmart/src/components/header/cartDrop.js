@@ -21,8 +21,10 @@ const CartDropDown = ({ cartItems, removeCartItems,toggleCartHidden, history }) 
               />
             ))}
           </div>
+          <div className='buttons'>
+
           <button
-            className="cart-dropdown-btn"
+            className="view_cart"
             onClick={() => {
                history.push("/my-cart");
               toggleCartHidden();
@@ -30,12 +32,22 @@ const CartDropDown = ({ cartItems, removeCartItems,toggleCartHidden, history }) 
           >
             View Cart
           </button>
+          <button
+            className="checkout"
+            onClick={() => {
+               history.push("/check-out");
+              toggleCartHidden();
+            }}
+          >
+            Checkout
+          </button>
+          </div>
         </>
       ) : (
         <>
         <div className="empty-message">Your cart is empty</div>
         <button
-            className="cart-dropdown-btn"
+            className="got_store"
             onClick={() => {
               history.push("/shop");
               toggleCartHidden();

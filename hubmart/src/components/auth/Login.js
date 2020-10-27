@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { loginUser } from '../../actions/auth/actions';
 import { authUserSelector , showMessageSelector, alertMessageSelector} from '../../reducers/authReducer/selector';
-// import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 
 const validate = (values) => {
   const errors = {};
@@ -37,7 +37,7 @@ const hiddenField = ({ type, meta: { error } }) => {
     </div>
   );
 };
-function LoginForm(props){
+function LoginForm (props){
 
   const onSubmit = formValues => {
     props.loginUser(formValues);
@@ -45,6 +45,7 @@ function LoginForm(props){
 
  
     if (props.isAuthenticated) {
+      console.log(props.isAuthenticated)
       return <Redirect to='/my-account' />;
     }
 const { pristine, reset, submitting, alertMessage, showMessage} = props
@@ -92,7 +93,7 @@ LoginForm = connect(
   {loginUser}
 )(LoginForm);
 
-export default reduxForm({
+export default reduxForm({ 
   form: 'loginForm',
   validate,
 })(LoginForm);

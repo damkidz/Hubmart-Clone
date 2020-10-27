@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'safedelete',
     'knox',
     'graphene_django',
+    'django_countries',
 
     #app
     'Products',

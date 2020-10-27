@@ -18,13 +18,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
     
+    # def create(self, validated_data):
+    #     user = MyUser.objects.create_user(
+    #         email=validated_data['email'],
+    #         username=validated_data['username']
+    #     )
+    #     user.set_password(validated_data['password'])
+    #     user.save()
+    #     return user
     def create(self, validated_data):
-        user = MyUser.objects.create_user(
-            email=validated_data['email'],
-            username=validated_data['username']
-        )
-        user.set_password(validated_data['password'])
-        user.save()
+        user = MyUser.objects.create_user(**validated_data)
         return user
 
 class LoginSerializer(serializers.Serializer):

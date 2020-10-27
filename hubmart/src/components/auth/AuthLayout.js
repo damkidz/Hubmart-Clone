@@ -14,9 +14,9 @@ export default function LayoutLogin() {
       <div className="or">or</div>
       <div className='seprator2'></div>
       </div>
-      <div>
+      {/* <div>
         <SignupForm />
-      </div>
+      </div> */}
     </div>
   );
 }

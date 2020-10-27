@@ -5,9 +5,8 @@ import { isLoadingSelector} from "../../reducers/productReducer/selector";
 import { Slider } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ShopProducts from "./ShopProducts";
 import "./styles/shop.scss";
-import DropMenu from "./utilities/dropDown";
+import DropMenu from "./utils/dropDown";
 import loader from '../../assets/images/loader.gif';
 import {formatter} from '../../utils/currencyFormater';
 import { fetchAllProducts } from "../../actions/products/actions";
@@ -184,13 +183,13 @@ return () =>({
             :
            (
              <>
+            {/* <ShopProducts />
             <ShopProducts />
             <ShopProducts />
             <ShopProducts />
             <ShopProducts />
             <ShopProducts />
-            <ShopProducts />
-            <ShopProducts />
+            <ShopProducts /> */}
             </>
            )
             }

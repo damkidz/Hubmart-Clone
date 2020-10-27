@@ -122,7 +122,7 @@ const ProductDetails = (props) => {
           </div>
         </div>
       ) : null}
-      <RelatedProducts />
+      {/* <RelatedProducts /> */}
     </>
   );
 };

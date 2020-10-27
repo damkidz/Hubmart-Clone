@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { loginUser } from '../../actions/auth/actions';
-import { authUserSelector , showMessageSelector, alertMessageSelector} from '../../reducers/authReducer/selector';
-// import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { registerUser } from '../../actions/auth/actions';
+import { authUserSelector  , showMessageSelector, alertMessageSelector} from '../../reducers/authReducer/selector';
+
 
 const validate = (values) => {
   const errors = {};
@@ -18,66 +18,77 @@ const validate = (values) => {
 };
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
-    return (
-      <div className='signin-renderfield-layout'>
-      <label>{label}</label>
-      <div className='signin-renderfield'>
-        <input {...input}  type={type}  className='signin-renderfield-input'/>
-        {touched && error && <p className='signin-renderfield-error'>{error}</p>}
-      </div>
+  return (
+    <div className='login-renderfield-layout'>
+    <label>{label}</label>
+    <div className='login-renderfield'>
+      <input {...input}  type={type}  className='login-renderfield-input'/>
+      {touched && error && <span className='login-renderfield-error'>{error}</span>}
     </div>
-    );
-  };
+  </div>
+  );
+};
 
-
-  const hiddenField = ({ type, meta: { error } }) => {
-    return (
-      <div className='hiddenfield-layout'>
-        <input type={type}  className='hiddenfield-input'/>
-        {error && <div className='hiddenfield-error'>{error}</div>}
-      </div>
-    );
-  };
+const hiddenField = ({ type, meta: { error } }) => {
+  return (
+    <div>
+      <input type={type}  />
+      {error && <div >{error}</div>}
+    </div>
+  );
+};
 function SignupForm(props){
 
   const onSubmit = formValues => {
-    props.loginUser(formValues);
+    props.registerUser(formValues);
   };
 
  
-    if (props.isAuthenticated) {
-      return <Redirect to='/my-account' />;
-    }
+    // if (props.isAuthenticated) {
+    //   return <Redirect to='/' />;
+    // }
 const { pristine, reset, submitting, alertMessage, showMessage} = props
 
     return (
-      <div className='signup-container'>
-        <p className='auth-title'>Register</p>
+      <div className='login-container'>
+        <p className='auth-title'>Login</p>
           <form
             onSubmit={props.handleSubmit(onSubmit)}
-            className='signup-form'
+            className='login-form'
           >
             <Field
               name='username'
               type='text'
               component={renderField}
+              label='Username'
+            />
+            <Field
+              name='email'
+              type='email'
+              component={renderField}
               label='Email'
             />
             <Field
-              name='non_field_errors'
-              type='hidden'
-              component={hiddenField}
+              name='password'
+              type='password'
+              component={renderField}
+              label='Password'
             />
+            <Field
+              name='password2'
+              type='password'
+              component={renderField}
+              label='Confirm Password'
+            />
+            <button  className='login-btn' disabled={pristine || submitting}>Login</button>
            
-            <button className='signup-btn'  disabled={pristine || submitting}>Register</button>
           </form>
           <div>
             {showMessage && <div className='renderfield-error'>{alertMessage}</div>}
             </div>
           <p className="text">
-            Don you have an account? <Link to='/login-signup'>Login</Link>
+            Don't have an account? <Link to='/login-signup'>Register</Link>
           </p>
-        
       </div>
     );
 }
@@ -90,10 +101,10 @@ const mapStateToProps = state => ({
 
 SignupForm = connect(
   mapStateToProps,
-  {loginUser}
+  {registerUser}
 )(SignupForm);
 
 export default reduxForm({
-  SignupForm: 'SignupForm',
+  form: 'SignupForm',
   validate,
 })(SignupForm);
